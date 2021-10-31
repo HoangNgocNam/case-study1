@@ -86,7 +86,8 @@ function upDateSuccess() {
     let mail = document.getElementsByName("mail")[0].value;
     let phone = document.getElementsByName("phone")[0].value;
     let address = document.getElementsByName("address")[0].value;
-    let position = document.getElementsByName("position")[0].value;
+    // let position = document.getElementsByName("position")[0].value;
+    let position = document.querySelector('input[name="position"]:checked').value;
     let department = document.getElementsByName("department")[0].value;
     let interest = document.getElementsByName("interest")[0].value;
     let id = data.length + 1;
@@ -100,7 +101,7 @@ function upDateSuccess() {
         department: department,
         interest: interest
     };
-
+    data.push(account);
     document.getElementById("add-infor").classList.remove("hide");
     document.getElementById("update-success").classList.add("hide");
     localStorage.setItem("arrAccount", JSON.stringify(data));
